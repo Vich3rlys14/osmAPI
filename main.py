@@ -6,8 +6,11 @@ app = fastapi.FastAPI()
 
 class Data(BaseModel):
     street_name : str
+@app.get("/") 
+def base ():
+	return " Geocoding API "
 
-@app.get("/search")
+@app.post("/search")
 def search(data : Data):
     res =  osm(data.street_name)
     if res.json != None:
