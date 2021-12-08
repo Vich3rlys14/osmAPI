@@ -12,4 +12,4 @@ def search(data : Data):
     res =  osm(data.street_name)
     if res.json != None:
     	return { "data" : res.json , "noResult" : False}
-    return { "noResult" : True} 
+    return { "noResult" : True}
